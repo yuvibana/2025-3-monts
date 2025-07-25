@@ -1,0 +1,134 @@
+### 1. **Todo App with Filters**
+
+**Problem:**
+Build a Todo app with the following features:
+
+* Add / Delete / Toggle tasks.
+* Filter by: All, Completed, Active.
+* Store todos in `localStorage`.
+* Bonus: Add sorting or due dates.
+
+**Skills Tested:** State management, controlled inputs, list rendering, filtering logic, `useEffect`, modular structure.
+
+---
+
+### 2. **Debounced Search with API Call**
+
+**Problem:**
+Create a search input that:
+
+* Calls a public API (like GitHub users or books) with a debounce of 500ms.
+* Shows a loading state.
+* Displays results below the input.
+
+**Skills Tested:** Debouncing, `useEffect`, `useCallback`, conditional rendering, async handling.
+
+---
+
+### 3. **Form with Validation and Error Handling**
+
+**Problem:**
+Build a form with fields: Name, Email, Password.
+
+* Validate on blur and submit.
+* Show error messages.
+* Disable submit until valid.
+* Bonus: Show success message after submission.
+
+**Skills Tested:** Controlled components, validation logic, form state, conditional UI.
+
+---
+
+### 4. **Custom Modal Component**
+
+**Problem:**
+Create a reusable `Modal` component:
+
+* Open/close via props.
+* Close on overlay click or ESC.
+* Animate open/close (basic CSS or `framer-motion`).
+
+**Skills Tested:** Portal usage, `useEffect`, event handling, reusable component patterns.
+
+---
+
+### 5. **Infinite Scroll List**
+
+**Problem:**
+Fetch paginated data and append it as the user scrolls.
+
+* Show loader while fetching.
+* Use any public API.
+
+**Skills Tested:** Scroll event handling, pagination logic, async fetch, performance optimization.
+
+---
+
+### 6. **Image Carousel / Slider**
+
+**Problem:**
+Create a horizontal image carousel that:
+
+* Shows 1–3 items depending on screen size.
+* Has next/prev navigation.
+* Loops infinitely.
+
+**Skills Tested:** State management, `ref` usage, conditional styling, responsiveness.
+
+---
+
+### 7. **Build a Stopwatch / Timer**
+
+**Problem:**
+A digital timer with:
+
+* Start, Pause, Reset buttons.
+* Show elapsed time in `MM:SS`.
+
+**Skills Tested:** `useEffect`, intervals, cleanup logic, time formatting.
+
+---
+
+### 8. **Create a Dynamic Table with Sorting and Filtering**
+
+**Problem:**
+Render a table of data with:
+
+* Sortable columns.
+* Search box to filter rows.
+* Optional pagination.
+
+**Skills Tested:** Data manipulation, UI interactions, clean component breakdown.
+
+---
+
+### 9. **Multi-Step Form Wizard**
+
+**Problem:**
+Implement a 3-step form with Next/Back buttons.
+
+* Persist data across steps.
+* Show a summary before submit.
+
+**Skills Tested:** State across steps, controlled forms, component composition.
+
+---
+
+### 10. **Build a File Uploader**
+
+**Problem:**
+Upload files with:
+
+* Drag-and-drop support.
+* Preview selected images.
+* Remove uploaded file before submit.
+
+**Skills Tested:** File input handling, drag/drop events, preview rendering.
+
+---
+## ⚙️ Bonus: Technical Requirements You May Be Asked For
+
+* Use **TypeScript** if comfortable.
+* Write **unit tests** using Jest + React Testing Library.
+* Modularize code: split logic into components/hooks/utils.
+* Use **CSS modules**, **Tailwind**, or **Styled Components** for styling.

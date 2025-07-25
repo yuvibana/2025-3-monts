@@ -1,0 +1,14 @@
+Job Board UI
+Functionality: Job list, filters (location, role, remote), application form.
+
+Extra: Responsive layout, accessibility, and search.
+
+Tests: Form validation, API calls, and performance.
+
+Real-Time Chat App
+Tech: React + WebSockets or Firebase.
+
+Features: Live messaging, typing indicators, user presence.
+
+Why?: Real-time state management and UX.
+
