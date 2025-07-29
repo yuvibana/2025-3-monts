@@ -1,0 +1,93 @@
+JavaScript and React Interview Questions (Intermediate to Senior Level)
+
+JavaScript (Intermediate to Senior Level)
+  Core Concepts
+    - Explain the difference between var, let, and const.
+    - How does JavaScript's event loop work?
+    - What is hoisting in JavaScript?
+    - What are closures? Provide a use case.
+    - What is the difference between == and ===?
+    - Explain call, apply, and bind.
+    - What is the difference between synchronous and asynchronous code?
+    - What is a promise, and how does async/await improve code readability?
+    - What is the Temporal Dead Zone?
+    - What are IIFEs (Immediately Invoked Function Expressions)?
+  Advanced Concepts
+    - Explain prototypal inheritance.
+    - What is the difference between shallow copy and deep copy?
+    - What is the this keyword and how does it behave in different contexts?
+    - What is a memory leak, and how do you avoid it?
+    - What are generators and how are they different from regular functions?
+  ES6+ Features
+    - Explain destructuring, rest, and spread operators.
+    - What is the difference between arrow functions and regular functions?
+    - What are Sets and Maps, and how do they differ from arrays and objects?
+    - Explain optional chaining and nullish coalescing.
+    - How does the module system (import/export) work?
+
+React (Intermediate to Senior Level)
+  React Fundamentals
+    - What are the differences between functional and class components?
+    - What are React hooks? List some commonly used ones.
+    - Explain the useEffect dependency array and how it works.
+    - What is the virtual DOM and how does React use it?
+    - How does React rendering and reconciliation work?
+  State Management
+    - How do you manage global state in React?
+    - Difference between Context API and Redux?
+    - What are the tradeoffs of using useReducer vs useState?
+    - Explain the concept of controlled vs uncontrolled components.
+    - How would you handle forms and validation in React?
+  Performance Optimization
+    - How to optimize rendering in React?
+    - What is memoization and how does React.memo or useMemo help?
+    - When and why would you use useCallback?
+    - Explain lazy loading and code splitting in React.
+    - How does React’s reconciliation algorithm handle updates?
+  React Ecosystem
+    - How do you use React Router? What's new in v6+?
+    - How would you handle API calls in React? (e.g., using Axios or fetch)
+    - What is React Query / TanStack Query and when should you use it?
+    - How do you manage side effects in React apps?
+    - How would you integrate authentication (JWT/session) in a React app?
+  Testing
+    - What is the difference between unit, integration, and E2E testing?
+    - How do you test React components using Jest and React Testing Library?
+    - What are mock functions and why are they useful in testing?
+    - How do you test hooks?
+  Design Patterns and Architecture
+    - What is the Container/Presentational component pattern?
+    - How do you structure a large-scale React application?
+    - Explain HOCs (Higher Order Components) and render props.
+    - How would you build a reusable component library?
+    - How do you handle error boundaries in React?
+    - What are the best practices for managing side-effects, data fetching, and cleanup?
+
+  Performance Optimization
+    -How to optimize rendering in React?
+    -What is memoization and how does React.memo or useMemo help?
+    -When and why would you use useCallback?
+    -Explain lazy loading and code splitting in React.
+    -How does React’s reconciliation algorithm handle updates?
+
+  React Ecosystem
+    -How do you use React Router? What's new in v6+?
+    -How would you handle API calls in React? (e.g., using Axios or fetch)
+    -What is React Query / TanStack Query and when should you use it?
+    -How do you manage side effects in React apps?
+    -How would you integrate authentication (JWT/session) in a React app?
+
+  Testing
+   -What is the difference between unit, integration, and E2E testing?
+   -How do you test React components using Jest and React Testing Library?
+   -What are mock functions and why are they useful in testing?
+
+ How do you test hooks?
+  -Design Patterns and Architecture
+  -What is the Container/Presentational component pattern?
+  -How do you structure a large-scale React application?
+  -Explain HOCs (Higher Order Components) and render props.
+  -How would you build a reusable component library?
+  -How do you handle error boundaries in React?
+  -What are the best practices for managing side-effects, data fetching, and cleanup?
+
