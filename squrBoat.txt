@@ -1,0 +1,27 @@
+ <button onClick={AddInput}>Add Input</button>
+
+            <form onSubmit={hndlSubmit}>
+                {inputs.map((input, index) => (
+                    <input
+                        key={index}
+                        type="text"
+                        value={input}
+                        onChange={(e) => handleChange(index, e.target.value)}
+                        placeholder="Some Text Here" />
+                ))}
+                <button>Submit</button>
+            </form>
+
+const [inputs, setInputs] = useState([''])
+
+
+    const AddInput = (e) => {
+        setInputs(prev => [...prev, ''])
+    }
+    const handleChange = (index, value) => {
+        const newInputs = [...inputs];
+        newInputs[index] = value;
+        setInputs(newInputs);
+    };
+
+    const hndlSubmit = (e) => { }
