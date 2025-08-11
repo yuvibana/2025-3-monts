@@ -5,6 +5,8 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, R
 import Layout from './Layout'
 import UseState from './pages/useStateHook/index.jsx'
 import UseEffect from './pages/useEffectHook/Index.jsx'
+import UseContext from './pages/useContextHook/Index.jsx'
+import UseReducer from './pages/useReducerHook/Index.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -12,6 +14,8 @@ const router = createBrowserRouter(
       <Route path='' element={<h1>Home</h1>} />
       <Route path='useStateHook' element={<UseState />} />
       <Route path='useEffectHook' element={<UseEffect />} />
+      <Route path='UseContextHook' element={<UseContext />} />
+      <Route path='UseReducerHook' element={<UseReducer />} />
     </Route>
   )
 )
