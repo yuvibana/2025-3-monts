@@ -8,6 +8,7 @@ import UseEffect from './pages/useEffectHook/Index.jsx'
 import UseContext from './pages/useContextHook/Index.jsx'
 import UseReducer from './pages/useReducerHook/Index.jsx'
 import UseCallback from './pages/useCallback/Index.jsx'
+import UseMemo from './pages/useMemoHook/Index.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,8 +18,8 @@ const router = createBrowserRouter(
       <Route path='useEffectHook' element={<UseEffect />} />
       <Route path='UseContextHook' element={<UseContext />} />
       <Route path='UseReducerHook' element={<UseReducer />} />
-      <Route path='UseReducerHook' element={<UseReducer />} />
       <Route path='UseCallbackHook' element={<UseCallback />} />
+      <Route path='UseMemokHook' element={<UseMemo />} />
     </Route>
   )
 )
