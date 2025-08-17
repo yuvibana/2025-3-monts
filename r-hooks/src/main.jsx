@@ -11,6 +11,8 @@ import UseCallback from './pages/useCallback/Index.jsx'
 import UseMemo from './pages/useMemoHook/Index.jsx'
 import UseRef from './pages/useRefHook/Index.jsx'
 import UseImperativeHandle from './pages/useImperativeHandleHook/Index.jsx'
+import UseLayoutEffect from './pages/useLayoutEffect/Index.jsx'
+import UseTransition from './pages/useTransitionHook/Index.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +26,8 @@ const router = createBrowserRouter(
       <Route path='UseMemokHook' element={<UseMemo />} />
       <Route path='UseRefkHook' element={<UseRef />} />
       <Route path='UseImperativeHandlekHook' element={<UseImperativeHandle />} />
+      <Route path='UseLayoutEffect' element={<UseLayoutEffect />} />
+      <Route path='UseTransition' element={<UseTransition />} />
     </Route>
   )
 )
