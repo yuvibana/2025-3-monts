@@ -1,4 +1,3 @@
-
 import React, { useLayoutEffect, useRef, useState } from 'react'
 
 // Real-World Example

@@ -13,6 +13,10 @@ import UseRef from './pages/useRefHook/Index.jsx'
 import UseImperativeHandle from './pages/useImperativeHandleHook/Index.jsx'
 import UseLayoutEffect from './pages/useLayoutEffect/Index.jsx'
 import UseTransition from './pages/useTransitionHook/Index.jsx'
+import UseSyncExternalStore from './pages/useSyncExternalStore/Index.jsx'
+import UseInsertionEffect from './pages/useInsertionEffect/Index.jsx'
+import UseCustomHook from './pages/useCustomHook/Index.jsx'
+import UseSessionStorage from './pages/useSessionStorage/Index.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +32,11 @@ const router = createBrowserRouter(
       <Route path='UseImperativeHandlekHook' element={<UseImperativeHandle />} />
       <Route path='UseLayoutEffect' element={<UseLayoutEffect />} />
       <Route path='UseTransition' element={<UseTransition />} />
+      {/* useId Skipped */}
+      <Route path='useSyncExternalStore' element={<UseSyncExternalStore />} />
+      <Route path='useInsertionEffect' element={<UseInsertionEffect />} />
+      <Route path='useCustomHook' element={<UseCustomHook />} />
+      <Route path='useSessionStorage' element={<UseSessionStorage />} />
     </Route>
   )
 )

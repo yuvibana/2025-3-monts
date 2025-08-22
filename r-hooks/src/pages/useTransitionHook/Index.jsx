@@ -15,6 +15,8 @@ export default function Index() {
         startTransition(() => {
             const result = bigList.filter((item) =>
                 item.toLowerCase().includes(value.toLowerCase()))
+            console.log(result);
+            
             setFiltered(result);
         })
     }
