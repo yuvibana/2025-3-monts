@@ -1,0 +1,73 @@
+# What is TypeScript ?
+    TypeScript is a superset of JavaScript that adds static typing.
+        Benefits:
+    Catch error at comiple time instead of run time.
+    Better IDE support(IntelliSense, autocomplete).
+    Make large scale app easier to maintain
+# Interview line: 
+  “I prefer TypeScript because it reduces runtime bugs, enforces type safety, and improves developer productivity.”
+
+
+# Core Types
+1. Primitive Types: string, number, boolean, null, undefined, symbol, bigint
+let name: string = "bp singh"
+let age: number = 25;
+let isDev: boolean = true;
+
+2. Special Types: any, unknown, never, void.
+let notKnown: any = "can be anything";  // Avoid this
+let unKnownVal: unknown = 10;  // Safer than any
+let noReturn: void = undefined; // functions without return
+let neverHappens: never; // unreachable (e.g. errors)
+
+3. Union Types
+let id: string | number;
+id = "abc";
+id = 123;
+
+4. Intersection Types
+type Person = { name: string };
+type Employee = { empId: number };
+type Developer = Person & Employee;
+const dev: Developer = { name: "Bhupendra", empId: 101 };
+
+  Interview Q: Difference between any and unknown ?
+    any : You can assign it to anything(unsafe).
+        unknown: You must check type before using (safe).
+
+    any Type
+
+    any is the most permissive type in TypeScript.
+
+    With any, you can assign any value to a variable, and you can perform any operations on it without TypeScript checking or enforcing any type safety.
+
+    let x: any = 5;
+    x = "Hello";
+    x = true;
+    x.someNonExistentMethod();  // No error, TypeScript won't catch this!
+
+    unknown Type
+
+    unknown is safer than any because TypeScript forces you to do type checks before performing operations on an unknown value.
+
+    When you use unknown, TypeScript doesn’t allow you to just do anything with it.You must first assert or narrow the type before using it, which prevents errors and promotes type safety.
+
+    Example:
+    let y: unknown = 5;
+    y = "Hello";
+    y = true;
+
+    // This will give an error:
+    y.someNonExistentMethod();  // Error: Object is of type 'unknown'.
+
+    // Correct usage:
+    if (typeof y === "string") {
+        console.log(y.length);  // OK: We know `y` is a string here.
+    }
+
+
+    Type Inference
+
+    If you don’t specify a type, TS infers it:
+    let city = "Delhi"; // inferred as string
+    city = 123; // ❌ Error
