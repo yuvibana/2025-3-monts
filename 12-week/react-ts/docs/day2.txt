@@ -1,0 +1,80 @@
+1. Functions in TypeScript
+    In JS, Functions are flexible(parameters/returns can be anything).
+    In TS, you define strict contracts -> parameter types + return type.  
+
+    Function with parameter + return type
+    
+    function add(a:number, b:number):number{
+        return a + b;
+    }
+
+    a: number, b: number-> input must be number;
+    number after function -> return type is number.
+
+    =>Optional & Default Parameters
+        function greet(name: string, age?: number): string {
+            return age ? `Hello ${name}, age ${age}` : `Hello ${name}`;
+        }
+
+        function multiply(a: number, b: number = 2): number {
+            return a * b;
+        }
+
+    =>Function Expressions
+        const subtract = (x: number, y: number): number => x - y;
+
+
+    => Return Type void and never
+        function logMessage(msg: string): void {
+            console.log(msg); // no return
+        }
+
+        function throwError(message: string): never {
+            throw new Error(message); // never returns
+        }
+
+
+2. Union & Intersection Types
+    Union → either/or.
+    function printId(id: number | string): void {
+        console.log("ID:", id);
+    }
+
+    Intersection → combine multiple types.
+    type Name = { name: string };
+    type Age = { age: number };
+    type Person = Name & Age;
+    const p: Person = { name: "Bhupendra", age: 25 };
+
+3. Type Aliases
+    Type Aliases let you give a name to a type.
+    type USerID = string | number;
+    function getUser(id: UserID): string {
+        return `User ID is ${id}`;
+    }
+
+4. Functions + Type Aliases
+    type MathOperation = (a: number, b: number) => number;
+    const add: MathOperation = (a, b) => a + b;
+    const mul: MathOperation = (a, b) => a * b;
+
+
+
+\\ ==============================//=========================\\=================//
+📝 Interview/Revision Notes
+
+Always specify parameter + return type → ensures type safety.
+    void → function doesn’t return.
+    never → function never finishes (infinite loop, throw error).
+    
+    Optional parameter (?) vs Default parameter:
+        ? means value can be undefined.
+        Default gives a fallback value.
+
+    Union (|) = either/or.
+    Intersection (&) = combine multiple types.
+    Type Alias vs Interface (common question):
+        Both can define object shapes.
+        type can also define unions & primitives.
+        interface is more extendable (good for OOP & React props).
+\\ ==============================//=========================\\=================//
