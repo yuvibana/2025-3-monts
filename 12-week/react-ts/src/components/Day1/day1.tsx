@@ -8,7 +8,7 @@ type GreetingProps = {
 const Day1: React.FC<GreetingProps> = ({ name, age }) => {
     return (
         <div>
-            <h2>Hello {name}, Age: {age ?? "N/A"}</h2>;
+            <h2 className="p-0 m-0">Hello {name}, Age: {age ?? "N/A"}</h2>
         </div>
     )
 }
