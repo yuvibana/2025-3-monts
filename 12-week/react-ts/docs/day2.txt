@@ -78,3 +78,66 @@ Always specify parameter + return type → ensures type safety.
         type can also define unions & primitives.
         interface is more extendable (good for OOP & React props).
 \\ ==============================//=========================\\=================//
+
+
+
+diff b/w type and interface
+    Both type and interface can be used to define the structure of an object.
+    // Using interface
+    interface Person {
+        name: string;
+        age: number;
+    }
+
+    // Using type
+    type Person = {
+        name: string;
+        age: number;
+    };
+
+
+        interface : =>
+            Interface: Can be extended (using extends) or implemented (using implements) by other interfaces or classes.
+                interface Animal {
+                    sound: string;
+                }
+
+                interface Dog extends Animal {
+                    breed: string;
+                }
+
+                class Bulldog implements Dog {
+                    sound = "bark";
+                    breed = "Bulldog";
+                }
+
+
+        Interface: Supports declaration merging, which means you can declare the same interface multiple times, and TypeScript will automatically merge the definitions.
+            interface Car {
+                make:string
+            }
+            interface Car{
+                model:string
+            }
+            const myCar: Car {
+                make:"toyota",
+                model"camry"
+            }
+
+        Type: Can be extended using intersections (&), but it cannot be implemented by classes.
+            type Animal = {
+                sound: string;
+            };
+
+            type Dog = Animal & {
+                breed: string;
+            };
+        Type: Does not support declaration merging. If you try to declare the same type multiple times, you'll get an error.
+        type Car = {
+            make: string;
+        };
+
+        // Error: Duplicate identifier 'Car'.
+        type Car = {
+            model: string;
+        };

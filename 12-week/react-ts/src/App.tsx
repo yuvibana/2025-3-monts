@@ -4,7 +4,7 @@ import BmiCalculator from './components/Day1/bmiCalculator'
 import Day1 from './components/Day1/day1'
 import Day2 from './components/day2/day2'
 import Day2P1 from './components/day2/day2P1'
-import Day2Cal from './components/day2/day2CalCulator'
+import Day2Cal from './components/day2/day2CalCalculater'
 
 function App() {
 
