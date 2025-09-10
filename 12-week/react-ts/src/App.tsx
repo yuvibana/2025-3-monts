@@ -13,7 +13,7 @@ function App() {
       {/* Day 1 */}
       <div>
         <h3 style={{ color: "rgb(24, 94, 170)", fontStyle: "italic" }}> # Day One: Basics Of TS</h3>
-        <Day1 name='B.p Singh' />
+        <Day1 name='Async Dev' />
         <BmiCalculator />
       </div>
 
@@ -27,6 +27,11 @@ function App() {
         <Day2P1 />
         <h4 style={{ color: "#333", fontStyle: "italic" }}># Day Two: 2.2 {"=>"} Proj</h4>
         <Day2Cal />
+      </div>
+      {/* Day 2 */}
+      <div>
+        <h3 style={{ color: "rgb(24, 94, 170)", fontStyle: "italic" }}># Day Three: Interfaces & Objects in TypeScript</h3>
+
       </div>
 
     </>

@@ -1,0 +1,116 @@
+1. Object Types
+    You can describe the shape of an object directly:
+        const user : {id:number, name:string,isAdmin:boolean}={
+            id:1,
+            name:"Bp Singh",
+            isAdmin:true,
+        }
+    => But repeating this inline can get messy → better to use interfaces.
+
+2. Interfaces
+    An interface defines the structure of an object.
+        interface User {
+            id:number,
+            name:string,
+            isAdmin:boolean
+        }
+        const user1: User = {id:1,name:"Bp Singh", isAdmin:true}
+
+3. Optional & Readonly Properties
+    ? → property is optional.
+    readonly → cannot be changed after creation.
+    interface Student {
+        readonly id: number; // not changable
+        name: string;
+        age?: number; // optional
+    }
+    const s1: Student = { id: 101, name: "Raj" };
+    s1.name = "Raj Singh"; // ✅ allowed
+    // s1.id = 102; ❌ error: readonly
+
+4. Extending Interfaces (Inheritance)
+    Interfaces can extend other interfaces.
+    interface Person {
+        name: string
+    }
+    interface Employees extends Person {
+          employeeId: number;
+    }
+
+    const emp: Employees = {name:"bp", employeeId: 7}
+
+5. Interfaces for Functions
+    You can use interfaces to define function signatures.
+    interface MathOperation {
+        (a:number,b:number):number
+    }
+    const multiply: MathOperation = (x,y)=>x*y;
+
+6. Interfaces vs Type Aliases
+    Both are very similar, but:
+        Interface
+            Can be extended (like OOP inheritance).
+            Best for objects & class contracts.
+
+        Type Alias
+            Can define unions, intersections, primitives too.
+            More flexible, but less extendable.
+            // Interface
+            interface Car {
+                brand: string;
+                speed: number;
+            }
+
+            // Type Alias
+            type Vehicle = {
+                brand: string;
+                speed: number;
+            };
+
+            => When to use interface or Type Alise 
+
+                Use interface when:
+                    You’re defining object shapes: interface is most commonly used for defining the structure of objects or classes.
+                    interface Person {
+                        name: string;
+                        age: number;
+                    }
+                    You expect to extend the structure: interface allows for extension via extends, making it more suitable for use in OOP-style code or large codebases.
+
+                    interface Employee extends Person {
+                        department: string;
+                    }
+                    You want to take advantage of declaration merging:
+                        interface Person {
+                            name: string;
+                        }
+                        interface Person {
+                            age: number;
+                        }
+                        const person: Person = { name: 'John', age: 30 }; // valid
+
+                    
+
+7. Structural Typing (Duck Typing in TS)
+    TS checks only the structure, not explicit type names.
+    
+    interface Point { x: number; y: number; }
+
+    function printPoint(p: Point) {
+        console.log(`x: ${p.x}, y: ${p.y}`);
+    }
+
+    const obj = { x: 10, y: 20, z: 30 };
+    printPoint(obj); // ✅ works, extra properties allowed
+
+
+Interview/Revision Notes
+
+    Interface defines the shape of an object.
+    ? = optional, readonly = cannot change.
+    Interface can extend another interface.
+    Interfaces can also define function types.
+    Interface vs Type Alias:
+    Interfaces → extendable, good for objects/classes.
+    Types → can also define unions, primitives, intersections.
+    Duck typing → TS is structurally typed, not nominally typed (names don’t matter, shape does).
