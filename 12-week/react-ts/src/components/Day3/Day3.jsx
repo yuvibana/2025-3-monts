@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 
 
 const localeStorageService = {
@@ -45,7 +45,6 @@ const handleSubmit = () => {
             return;
         }
         localeStorageService.add(student);
-        localeStorageService.getAll();
         clearStudent();
     };
 
@@ -110,20 +109,53 @@ const StudentsForm = () => {
 };
 
 
-const StudentsTable = () => {
+function FindStudents() {
     const studentList = localeStorageService.getAll();
+    const [searchTerm, setSearchTerm] = useState("");
+    const [stds, setStds] = useState(studentList);
 
+    function handleChange(e) {
+        const value = e.target.value;
+        setSearchTerm(value);
+        const filteredStd = studentList.filter((std) =>
+            std.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setStds(filteredStd);
+    }
+
+
+    function Render() {
+        return (
+            <input
+                type="text"
+                placeholder="Find by name"
+                value={searchTerm}
+                onChange={handleChange}
+                style={{ width: "90%", padding: "10px", marginBottom: "20px" }}
+            />
+        );
+    }
+
+    return { Render, stds };
+}
+
+
+const StudentsTable = () => {
+    const { Render, stds } = FindStudents();
     return (
-        <>
+        <div
+            style={{
+                padding: "10px",
+                marginTop: "50px",
+                textAlign: "left",
+                border: "1px solid #ddd",
+            }}
+        >
+            <Render />
             {
-                studentList.length > 0 &&
+                stds.length > 0 &&
                 <div
-                    style={{
-                        padding: "10px",
-                        marginTop: "50px",
-                        textAlign: "left",
-                        border: "1px solid #ddd",
-                    }}
+
                 >
                     <div
                         style={{
@@ -145,15 +177,14 @@ const StudentsTable = () => {
                         </span>
                         <span>Name</span>
                     </div>
-                    {studentList.map((item, key) => (
+                    {stds.map((item, key) => (
                         <RenderList key={key} item={item} index={key} />
                     ))}
                 </div>
             }
-        </>
+        </div>
     )
 }
-
 
 
 function RenderList({ item, index }) {
