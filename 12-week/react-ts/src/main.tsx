@@ -13,6 +13,7 @@ import Day2 from './components/day2/day2.tsx'
 import Day2P1 from './components/day2/day2P1.tsx'
 import Day2CalCalculater from './components/day2/day2CalCalculater.tsx'
 import Day3 from './components/Day3/Day3'
+import Day4 from './components/day4/Day4'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,9 @@ const router = createBrowserRouter(
       } />
       <Route path='day3' element={<>
         <Day3 />
+      </>} />
+      <Route path='day4' element={<>
+        <Day4 />
       </>} />
     </Route>
   )

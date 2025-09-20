@@ -1,32 +1,55 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
-export default function Debounce() {
-
-  function dBounce(func, delay) {
-    let timeId;
-    return function (...args) {
-      const context = this;
-      clearTimeout(timeId);
-      timeId = setTimeout(() => {
-        func.apply(context, args);
-      }, delay);
-    };
+function debounce(func, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args)
+    }, delay);
   }
+}
 
-  function logger(e) {
-    console.log("Logged value:", e.target.value);
-  }
+export default function () {
+  const [search, setSearch] = useState('');
+  const [data, setData] = useState([]);
 
-  const debouncedLogger = dBounce(logger, 2000);
+  const handleSearch = ((e) => { setSearch(e.target.value); });
+
+  const debouncedHandleSearch = useCallback(
+    debounce(handleSearch, 500),
+    [handleSearch]
+  );
+
+  useEffect(() => {
+    if (!search) return;
+    const fetchData = async () => {
+      const res = await fetch(`https://api.github.com/search/users?q=${search}`);
+      const json = await res.json();
+      setData(json.items || []);
+    }
+    fetchData();
+  }, [search])
 
 
   return (
     <div>
-      <h1>Debounce Implementation</h1>
       <input
         type="text"
-        onChange={debouncedLogger}
-      />
+        onChange={debouncedHandleSearch} />
+      <div>
+        {data.length ? (
+          data.map((user) => (
+            <div key={user.id}>
+              <a href={`${user.html_url}`} target="_blank" rel="noreferrer">
+                <p>{user.login}</p>
+              </a>
+            </div>
+          ))
+        ) : (
+          <p>No users found</p>
+        )}
+      </div>
     </div>
   )
 }

@@ -1,0 +1,29 @@
+===========Unions & Type Narrowing=============
+
+1. Union Types (|)
+    let value: string | number;
+    value = "hello"; // valid
+    value = 42;      // valid
+    // value = true; // ❌ not allowed
+
+2. Type Narrowing (via typeof / custom type guards)
+
+    function printId(id: string | number) {
+        if (typeof id === "string") {
+            console.log("ID in string:", id.toUpperCase());
+        } else {
+            console.log("ID in number:", id.toFixed(2));
+        }
+    }
+
+
+3. Discriminated Unions
+    type Shape =
+    | { kind: "circle"; radius: number }
+    | { kind: "square"; side: number };
+
+    function area(shape: Shape) {
+        if (shape.kind === "circle") return Math.PI * shape.radius ** 2;
+        return shape.side * shape.side;
+    }
+
