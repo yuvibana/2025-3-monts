@@ -42,3 +42,6 @@ Studios or indie creators book real audiences to watch unreleased content and pr
 Concept:
 
 An app to help solo diners instantly grab empty restaurant bar/counter seats with zero waiting. Designed for busy lunch hours or travelers.
+
+
+test in think pad
