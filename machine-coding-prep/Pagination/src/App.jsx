@@ -5,7 +5,6 @@ import PagesSizeDropdown from './components/pagesSizeDropdown'
 
 export default function App() {
   const [pageSize, setPageSize] = useState(10)
-
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(0)
