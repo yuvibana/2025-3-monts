@@ -3,26 +3,29 @@ import data from "./data.json";
 
 const FolderIcon = ({ open }) => <span>{open ? "-" : "+"}</span>;
 
-const Node = ({ node, expanded, toggle }) => {
-  const isOpen = expanded[node.name];
+const Node = ({ NodeList, expanded, toggle }) => {
 
   return (
-    <div>
-      <div
-        onClick={() => toggle(node.name)}
-        style={{ display: "flex", gap: "10px", cursor: "pointer" }}
-      >
-        {node.isfolder && <FolderIcon open={isOpen} />}
-        <span className="listname">{node.name}</span>
-      </div>
+    <div className="container">
+      {NodeList.map((node, i) => (
+        <div
+          key={i}
+        >
+          <div
+            onClick={() => toggle(node.name)}
+            style={{ display: "flex", gap: "10px", cursor: "pointer" }}
+          >
+            {node.isfolder && <FolderIcon open={expanded[node.name]} />}
+            <span className="listname">{node.name}</span>
+          </div>
 
-      {isOpen && node.children && (
-        <div className="item-card" style={{ marginLeft: 20 }}>
-          {node.children.map((child, i) => (
-            <Node key={i} node={child} expanded={expanded} toggle={toggle} />
-          ))}
+          {expanded[node.name] && node.children && (
+            <div className="item-card" style={{ marginLeft: 20 }}>
+              <Node NodeList={node.children} expanded={expanded} toggle={toggle} />
+            </div>
+          )}
         </div>
-      )}
+      ))}
     </div>
   );
 };
@@ -33,12 +36,9 @@ export default function App() {
   const toggle = useCallback((key) => {
     setExpanded(prev => ({ ...prev, [key]: !prev[key] }));
   }, []);
-
   return (
     <div>
-      {data.map((node, i) => (
-        <Node key={i} node={node} expanded={expanded} toggle={toggle} />
-      ))}
+      <Node NodeList={data} expanded={expanded} toggle={toggle} />
     </div>
   );
 }
