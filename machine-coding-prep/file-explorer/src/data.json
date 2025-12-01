@@ -2,39 +2,39 @@
     {
         "id": 1,
         "name": "public",
-        "isfolder": true,
+        "isFolder": true,
         "children": [
             {
                 "name": "logo.svg",
-                "isfolder": false
+                "isFolder": false
             }
         ]
     },
     {
         "id": 2,
         "name": "src",
-        "isfolder": true,
+        "isFolder": true,
         "children": [
             {
                 "id": 3,
                 "name": "components",
-                "isfolder": true,
+                "isFolder": true,
                 "children": [
                     {
                         "id": 4,
                         "name": "folder",
-                        "isfolder": true,
+                        "isFolder": true,
                         "children": []
                     },
                     {
                         "id": 5,
                         "name": "test",
-                        "isfolder": true,
+                        "isFolder": true,
                         "children": [
                             {
                                 "id": 6,
                                 "name": "test.js",
-                                "isfolder": false
+                                "isFolder": false
                             }
                         ]
                     }
@@ -43,28 +43,28 @@
             {
                 "id": 7,
                 "name": "App.js",
-                "isfolder": false
+                "isFolder": false
             },
             {
                 "id": 8,
                 "name": "data.json",
-                "isfolder": false
+                "isFolder": false
             },
             {
                 "id": 9,
                 "name": "index.css",
-                "isfolder": false
+                "isFolder": false
             },
             {
                 "id": 10,
                 "name": "main.css",
-                "isfolder": false
+                "isFolder": false
             }
         ]
     },
     {
         "id": 11,
         "name": "package.sjon",
-        "isfolder": false
+        "isFolder": false
     }
 ]
