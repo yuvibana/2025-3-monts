@@ -34,6 +34,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         });
 
         setAuth(null, null);
+        window.location.href = "/";
     };
 
     useEffect(() => {

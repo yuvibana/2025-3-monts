@@ -1,4 +1,5 @@
 import LoginPage from "@/src/components/Login";
+import LoginRegisterConatainer from "@/src/components/LoginRegisterConatainer";
 import Image from "next/image";
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
         />
         <div className="pt-10">
 
-          <LoginPage />
+          <LoginRegisterConatainer />
         </div>
       </div>
     </div>

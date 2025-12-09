@@ -88,9 +88,14 @@ export const me = async (req: any, res: Response) => {
 };
 
 export const logout = async (req: Request, res: Response) => {
-    res.cookie("jid", "", {
+    res.clearCookie("jid", {
         httpOnly: true,
-        expires: new Date(0)
+        secure: false,
+        sameSite: "lax",
+        path: "/api/auth/refresh",
     });
-    res.json({ message: "Logged out" });
+
+
+    return res.json({ message: "Logged out" });
 };
+

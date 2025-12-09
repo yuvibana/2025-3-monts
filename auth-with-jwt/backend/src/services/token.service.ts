@@ -2,7 +2,7 @@ import jwt, { SignOptions } from "jsonwebtoken";
 import type { StringValue } from "ms";
 
 export const generateAccessToken = (id: string, email: string) => {
-    const expiresIn = (process.env.ACCESS_EXPIRE || "15m") as StringValue;
+    const expiresIn = (process.env.ACCESS_EXPIRE || "1m") as StringValue;
 
     const options: SignOptions = {
         expiresIn
@@ -16,7 +16,7 @@ export const generateAccessToken = (id: string, email: string) => {
 };
 
 export const generateRefreshToken = (id: string) => {
-    const expiresIn = (process.env.REFRESH_EXPIRE || "7d") as StringValue;
+    const expiresIn = (process.env.REFRESH_EXPIRE || "1d") as StringValue;
 
     const options: SignOptions = {
         expiresIn
